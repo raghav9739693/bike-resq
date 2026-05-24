@@ -1,0 +1,29 @@
+.booking-page {
+  min-height: 100vh;
+
+  /* PREMIUM BACKGROUND */
+  background: radial-gradient(circle at top, #facc15 0%, #000 50%);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* CARD */
+.booking-card {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* BUTTON */
+.ant-btn-primary {
+  background: #25D366;
+  border: none;
+}
+
+.ant-btn-primary:hover {
+  background: #1da851 !important;
+}

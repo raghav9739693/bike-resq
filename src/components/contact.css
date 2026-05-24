@@ -1,0 +1,16 @@
+.contact {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-btn {
+  display: inline-block;
+  background: #facc15;
+  color: black;
+  padding: 12px 20px;
+  margin-top: 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}

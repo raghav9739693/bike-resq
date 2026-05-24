@@ -1,0 +1,56 @@
+.rental-container {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.rental-container h1 {
+  margin-bottom: 30px;
+}
+
+/* GRID */
+.bike-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.bike-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.bike-card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE */
+.bike-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* INFO */
+.bike-info {
+  padding: 15px;
+}
+
+.price {
+  color: #facc15;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* BUTTON */
+.rent-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}

@@ -1,0 +1,96 @@
+.hero {
+  height: 100vh;
+  background: url("/images/poster.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+/* DARK OVERLAY */
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LOGO */
+.hero-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+/* CONTENT */
+.hero-content {
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* HEADING */
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hero-content h1 span {
+  color: #facc15;
+}
+
+/* TEXT */
+.hero-content p {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+/* TAGS */
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.hero-tags span {
+  background: #facc15;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* BUTTON */
+.hero-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #25D366;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #1da851;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-logo {
+    width: 100px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+}

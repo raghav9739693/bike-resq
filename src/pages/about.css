@@ -1,0 +1,71 @@
+.about-page {
+  min-height: 100vh;
+
+  /* PREMIUM BACKGROUND */
+  background: radial-gradient(circle at top, #facc15 0%, #000 50%),
+              radial-gradient(circle at bottom, #1a1a1a 0%, #000 60%);
+}
+
+/* OVERLAY */
+.about-overlay {
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+/* TITLE */
+.about-title {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+/* INTRO */
+.about-intro {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #ccc;
+}
+
+/* GRID */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.about-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  background: #facc15;
+  color: black;
+}
+
+/* CTA BUTTON */
+.about-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 12px 25px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 26px;
+  }
+
+  .about-intro {
+    font-size: 14px;
+  }
+}
