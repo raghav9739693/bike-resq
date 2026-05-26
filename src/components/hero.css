@@ -1,12 +1,17 @@
 .hero {
   height: 100vh;
-  background: url("/images/poster.jpg") center/cover no-repeat;
-  position: relative;
+
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+    url("https://res.cloudinary.com/dezxt1zuv/image/upload/v1779835269/poster_tntk5r.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* DARK OVERLAY */
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.7);
   height: 100%;
   width: 100%;
 
