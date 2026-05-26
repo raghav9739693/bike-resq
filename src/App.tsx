@@ -12,6 +12,7 @@ import Rental from "./pages/Rental";
 import SpareParts from "./pages/SpareParts";
 import "antd/dist/reset.css";
 import SmartChat from "./components/SmartChat";
+import TrackingPage from "./pages/TrackingPage";
 function App() {
   return (
     <>
@@ -27,6 +28,8 @@ function App() {
         <Route path="/booking" element={<Booking />} />
         <Route path="/rental" element={<Rental />} />
         <Route path="/spare-parts" element={<SpareParts />} />
+                <Route path="/tracking" element={<TrackingPage />} />
+
 
 
       </Routes>

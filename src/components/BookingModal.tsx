@@ -37,14 +37,25 @@ const BookingModal = ({ open, onClose }: any) => {
   };
 
   const onFinish = (values: any) => {
-    const text = `Name: ${values.name}%0APhone: ${values.phone}%0ALocation: ${values.location}%0AService: ${values.service}`;
+  const text = `Name: ${values.name}%0A
+Phone: ${values.phone}%0A
+Location: ${values.location}%0A
+Service: ${values.service}`;
 
-    window.open(`https://wa.me/919667609610?text=${text}`, "_blank");
+  // 📲 Open WhatsApp
+  window.open(`https://wa.me/919667609610?text=${text}`, "_blank");
 
-    message.success("Request Sent!");
-    form.resetFields();
-    onClose();
-  };
+  // ✅ Save data for tracking page
+  localStorage.setItem("bookingData", JSON.stringify(values));
+
+  // 🔥 Redirect to tracking page
+  setTimeout(() => {
+    window.location.href = "/tracking";
+  }, 1000);
+
+  form.resetFields();
+  onClose();
+};
 
   return (
     <Modal
