@@ -1,35 +1,29 @@
 import "./sparesparts.css";
-import parts1 from "../../public/images/parts1.jpg";
-import parts2 from "../../public/images/parts2.jpg";
-import parts3 from "../../public/images/parts3.jpg";
-import parts4 from "../../public/images/parts4.jpg";
-
-
 
 const parts = [
   {
     id: 1,
     name: "Engine Oil",
     price: "₹499",
-    image: parts1,
+    image: "/images/parts1.jpg",
   },
   {
     id: 2,
     name: "Brake Pads",
     price: "₹299",
-    image: parts2,
+    image: "/images/parts2.jpg",
   },
   {
     id: 3,
     name: "Bike Battery",
     price: "₹1499",
-    image: parts3,
+    image: "/images/parts3.jpg",
   },
   {
     id: 4,
     name: "Headlight",
     price: "₹799",
-    image: parts4,
+    image: "/images/parts4.jpg",
   },
 ];
 
