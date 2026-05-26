@@ -5,28 +5,27 @@ const parts = [
     id: 1,
     name: "Engine Oil",
     price: "₹499",
-    image: "/images/parts1.jpg",
+    image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f",
   },
   {
     id: 2,
     name: "Brake Pads",
     price: "₹299",
-    image: "/images/parts2.jpg",
+    image: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f",
   },
   {
     id: 3,
     name: "Bike Battery",
     price: "₹1499",
-    image: "/images/parts3.jpg",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc",
   },
   {
     id: 4,
     name: "Headlight",
     price: "₹799",
-    image: "/images/parts4.jpg",
+    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2",
   },
 ];
-
 const SpareParts = () => {
   return (
     <div className="spare-container">
