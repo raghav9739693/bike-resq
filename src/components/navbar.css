@@ -11,7 +11,8 @@
   padding: 15px 25px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+    z-index: 9999;
+
 
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
@@ -82,11 +83,13 @@
 }
 
 /* HAMBURGER ICON */
-.menu-icon {
-  display: none;
-  font-size: 26px;
+ 
+ .menu-icon {
+  position: relative;
+  z-index: 10000;
   cursor: pointer;
-  color: white;
+  display: none;
+
 }
 
 /* MOBILE */

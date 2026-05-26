@@ -15,24 +15,33 @@ const Navbar = () => {
         ☰
       </div>
       <div className={`nav-links ${menuOpen ? "active" : ""}`}>
-        <Link to="/">Home</Link>
-        <Link to="/services">Services</Link>
-        <Link to="/rental">Rental</Link>
-         <Link to="/spare-parts">Spare Parts</Link>
-        <Link to="/about">About</Link>
+        <Link to="/"  onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+        <Link to="/rental" onClick={() => setMenuOpen(false)}>Rental</Link>
+         <Link to="/spare-parts" onClick={() => setMenuOpen(false)}>Spare Parts</Link>
+        <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
 
         {/* BOOK BUTTON */}
-        <button className="book-btn" onClick={() => setOpen(true)}>
-          Book Now
-        </button>
+ {/* BOOK BUTTON */}
+<button
+  className="book-btn"
+  onClick={() => {
+    setOpen(true);
+    setMenuOpen(false);   // ✅ close menu
+  }}
+>
+  Book Now
+</button>
 
-        <a
-          href="https://wa.me/919667609610"
-          target="_blank"
-          className="call-btn"
-        >
-          WhatsApp
-        </a>
+{/* WHATSAPP */}
+<a
+  href="https://wa.me/919667609610"
+  target="_blank"
+  className="call-btn"
+  onClick={() => setMenuOpen(false)}   // ✅ close menu
+>
+  WhatsApp
+</a>
       </div>
 
       {/* POPUP */}
