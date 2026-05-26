@@ -5,12 +5,16 @@ import "./navbar.css";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="navbar">
       <h2 className="logo">BikeResQ 🚀</h2>
-
-      <div className="nav-links">
+  {/* HAMBURGER */}
+      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
+      <div className={`nav-links ${menuOpen ? "active" : ""}`}>
         <Link to="/">Home</Link>
         <Link to="/services">Services</Link>
         <Link to="/rental">Rental</Link>

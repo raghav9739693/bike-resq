@@ -11,11 +11,12 @@ import Booking from "./pages/Booking";
 import Rental from "./pages/Rental";
 import SpareParts from "./pages/SpareParts";
 import "antd/dist/reset.css";
+import SmartChat from "./components/SmartChat";
 function App() {
   return (
     <>
       <Navbar />
-
+<SmartChat/>
       <Routes>
         {/* HOME PAGE */}
         <Route  path="/" element={<Home />} />

@@ -1,83 +1,70 @@
-import { Form, Input, Button, Select, Card, message } from "antd";
+import { Form, Input, Button, Card, message } from "antd";
+import { useState } from "react";
 import "./booking.css";
-
-const { Option } = Select;
 
 const Booking = () => {
   const [form] = Form.useForm();
+  const [loading, setLoading] = useState(false);
+
+  // 📍 GET LIVE LOCATION
+  const getLocation = () => {
+    setLoading(true);
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+
+        const location = `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+        form.setFieldsValue({ location });
+
+        message.success("Location fetched!");
+        setLoading(false);
+      },
+      () => {
+        message.error("Unable to fetch location");
+        setLoading(false);
+      }
+    );
+  };
 
   const onFinish = (values: any) => {
-    console.log("Form Data:", values);
+    const text = `Name: ${values.name}%0APhone: ${values.phone}%0ALocation: ${values.location}`;
 
-    // WhatsApp Integration
-    const text = `Name: ${values.name}%0APhone: ${values.phone}%0ALocation: ${values.location}%0AService: ${values.service}`;
-
-    window.open(
-      `https://wa.me/919667609610?text=${text}`,
-      "_blank"
-    );
-
-    message.success("Request Sent Successfully!");
-    form.resetFields();
+    window.open(`https://wa.me/919667609610?text=${text}`);
   };
 
   return (
     <div className="booking-page">
+      <Card className="booking-card" title="🚀 Book Service">
 
-      <Card className="booking-card" title="🚀 Book Bike Service">
+        <Form form={form} layout="vertical" onFinish={onFinish}>
 
-        <Form
-          form={form}
-          layout="vertical"
-          onFinish={onFinish}
-        >
-
-          <Form.Item
-            label="Full Name"
-            name="name"
-            rules={[{ required: true, message: "Please enter your name" }]}
-          >
-            <Input placeholder="Enter your name" />
+          <Form.Item name="name" label="Name" rules={[{ required: true }]}>
+            <Input />
           </Form.Item>
 
-          <Form.Item
-            label="Phone Number"
-            name="phone"
-            rules={[{ required: true, message: "Enter phone number" }]}
-          >
-            <Input placeholder="Enter phone number" />
+          <Form.Item name="phone" label="Phone" rules={[{ required: true }]}>
+            <Input />
           </Form.Item>
 
-          <Form.Item
-            label="Location"
-            name="location"
-            rules={[{ required: true, message: "Enter location" }]}
-          >
-            <Input placeholder="Enter your location" />
+          <Form.Item name="location" label="Location" rules={[{ required: true }]}>
+            <Input placeholder="Enter or fetch location" />
           </Form.Item>
 
-          <Form.Item
-            label="Select Service"
-            name="service"
-            rules={[{ required: true, message: "Select a service" }]}
-          >
-            <Select placeholder="Choose service">
-              <Option value="Petrol Delivery">Petrol Delivery</Option>
-              <Option value="Bike Towing">Bike Towing</Option>
-              <Option value="Jump Start">Jump Start</Option>
-              <Option value="Repair">Repair</Option>
-            </Select>
-          </Form.Item>
+          {/* 📍 LOCATION BUTTON */}
+          <Button onClick={getLocation} loading={loading} block>
+            📍 Use My Live Location
+          </Button>
 
-          <Form.Item>
-            <Button type="primary" htmlType="submit" block>
-              Submit Request 🚀
-            </Button>
-          </Form.Item>
+          <br />
+
+          <Button type="primary" htmlType="submit" block>
+            Submit 🚀
+          </Button>
 
         </Form>
       </Card>
-
     </div>
   );
 };

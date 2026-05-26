@@ -1,9 +1,40 @@
 import { Modal, Form, Input, Select, Button, message } from "antd";
+import { useState } from "react";
 
 const { Option } = Select;
 
 const BookingModal = ({ open, onClose }: any) => {
   const [form] = Form.useForm();
+  const [loading, setLoading] = useState(false);
+
+  // 📍 GET LIVE LOCATION
+  const getLocation = () => {
+    setLoading(true);
+
+    if (!navigator.geolocation) {
+      message.error("Geolocation not supported");
+      setLoading(false);
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+
+        const location = `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+        // ✅ SET VALUE IN FORM
+        form.setFieldsValue({ location });
+
+        message.success("Location fetched successfully!");
+        setLoading(false);
+      },
+      () => {
+        message.error("Unable to fetch location");
+        setLoading(false);
+      }
+    );
+  };
 
   const onFinish = (values: any) => {
     const text = `Name: ${values.name}%0APhone: ${values.phone}%0ALocation: ${values.location}%0AService: ${values.service}`;
@@ -40,12 +71,24 @@ const BookingModal = ({ open, onClose }: any) => {
           <Input placeholder="Enter phone number" />
         </Form.Item>
 
+        {/* 📍 LOCATION INPUT + BUTTON */}
         <Form.Item
           name="location"
           label="Location"
           rules={[{ required: true }]}
         >
-          <Input placeholder="Enter your location" />
+          <Input
+            placeholder="Enter your location or use live location"
+            addonAfter={
+              <Button
+                type="link"
+                onClick={getLocation}
+                loading={loading}
+              >
+                📍 Use My Location
+              </Button>
+            }
+          />
         </Form.Item>
 
         <Form.Item
