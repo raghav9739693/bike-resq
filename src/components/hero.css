@@ -1,6 +1,6 @@
 .hero {
   height: 100vh;
-  background: url("/images/poster.jpg") center/cover no-repeat;
+  background:  center/cover no-repeat;
   position: relative;
 }
 

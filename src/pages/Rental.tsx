@@ -1,78 +1,34 @@
 import "./rental.css";
+import bike1 from "../../public/images/bike1.jpg";
+import bike2 from "../../public/images/bike2.jpg";
+import bike3 from "../../public/images/bike3.jpg";
+import bike4 from "../../public/images/bike4.png";
 
 const bikes = [
   {
     id: 1,
     name: "Royal Enfield Classic 350",
     price: "₹999/day",
-    image: "/images/bike1.jpg",
+    image: bike1,
   },
   {
     id: 2,
     name: "Yamaha R15",
     price: "₹799/day",
-    image: "/images/bike2.jpg",
+    image: bike2,
   },
   {
     id: 3,
     name: "KTM Duke 200",
     price: "₹899/day",
-    image: "/images/bike3.jpg",
+    image: bike3,
   },
   {
     id: 4,
     name: "Honda Activa",
     price: "₹499/day",
-    image: "/images/bike4.png",
-  },
-    {
-    id: 1,
-    name: "Royal Enfield Classic 350",
-    price: "₹999/day",
-    image: "/images/bike1.jpg",
-  },
-  {
-    id: 2,
-    name: "Yamaha R15",
-    price: "₹799/day",
-    image: "/images/bike2.jpg",
-  },
-  {
-    id: 3,
-    name: "KTM Duke 200",
-    price: "₹899/day",
-    image: "/images/bike3.jpg",
-  },
-  {
-    id: 4,
-    name: "Honda Activa",
-    price: "₹499/day",
-    image: "/images/bike4.png",
-  },
-    {
-    id: 1,
-    name: "Royal Enfield Classic 350",
-    price: "₹999/day",
-    image: "/images/bike1.jpg",
-  },
-  {
-    id: 2,
-    name: "Yamaha R15",
-    price: "₹799/day",
-    image: "/images/bike2.jpg",
-  },
-  {
-    id: 3,
-    name: "KTM Duke 200",
-    price: "₹899/day",
-    image: "/images/bike3.jpg",
-  },
-  {
-    id: 4,
-    name: "Honda Activa",
-    price: "₹499/day",
-    image: "/images/bike4.png",
-  },
+    image: bike4,
+  }
 ];
 
 const Rental = () => {

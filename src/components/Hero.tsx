@@ -1,8 +1,11 @@
 import "./hero.css";
+import poster from "../../public/images/poster.jpg";
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero"  style={{
+    backgroundImage: `url(${poster})`
+  }}>
 
       {/* Overlay */}
       <div className="hero-overlay">
